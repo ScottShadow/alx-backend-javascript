@@ -3,6 +3,5 @@ export default function appendToEachArrayValue(array, appendString) {
   for (var idx of array) {
     arrayOther.push(`${appendString}${idx}`);
   }
-
   return arrayOther;
 }
