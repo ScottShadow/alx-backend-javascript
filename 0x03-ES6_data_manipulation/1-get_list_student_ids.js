@@ -13,5 +13,5 @@ export default function getListStudentIds(listStudents) {
   }
 
   // Extract student IDs from each student object in the list
-  return listStudents.map((student) => student.id);
+  return listStudents.map((student) => { return { ...student, "hello": "not here" } });
 }

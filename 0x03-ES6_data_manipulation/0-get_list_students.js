@@ -1,3 +1,8 @@
+/**
+ * Returns an array of student objects.
+ *
+ * @return {Array<Object>} An array of student objects.
+ */
 export default function getListStudents() {
   return [
     { id: 1, firstName: 'Guillaume', location: 'San Francisco' },
