@@ -9,11 +9,11 @@
  */
 export default function cleanSet(set, startString) {
   let reString = '';
-  if (!startString) {
+  if (!set || !startString || !(set instanceof Set) || typeof startString !== 'string') {
     return reString;
   }
   for (const i of set) {
-    if (i.startsWith(startString)) {
+    if (typeof i === 'string' && i.startsWith(startString)) {
       if (reString) {
         reString += '-';
       }
