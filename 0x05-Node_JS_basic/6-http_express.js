@@ -1,3 +1,4 @@
+#!/usr/bin/node
 /**
  * Creates an Express server that listens on port 1245
  * and responds to GET requests on the root path with
