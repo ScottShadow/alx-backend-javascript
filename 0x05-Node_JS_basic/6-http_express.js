@@ -1,4 +1,7 @@
 #!/usr/bin/node
+/**
+ * Creates and starts the Express server.
+ */
 const express = require('express');
 const app = express();
 const port = 1245
