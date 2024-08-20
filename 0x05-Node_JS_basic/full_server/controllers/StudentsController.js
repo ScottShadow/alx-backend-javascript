@@ -6,7 +6,7 @@ const readDatabase = require('../utils');
 const VALID_MAJORS = ['CS', 'SWE'];
 
 /**
- * 
+ * The controller for the /students route.
  */
 class StudentsController {
   static getAllStudents(request, response) {

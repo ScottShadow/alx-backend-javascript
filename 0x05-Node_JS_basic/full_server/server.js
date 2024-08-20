@@ -1,3 +1,6 @@
+/**
+ * Creates and starts the Express server.
+ */
 const express = require('express');
 const mapRoutes = require('./routes');
 
