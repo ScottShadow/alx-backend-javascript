@@ -1,6 +1,7 @@
+#!/usr/bin/node
 /**
- * Contains the miscellaneous route handlers.
- * @author Bezaleel Olakunori <https://github.com/B3zaleel>
+ * This module exports an asynchronous function `getHomepage` that
+ * sends a message to the client.
  */
 class AppController {
   static getHomepage(request, response) {
@@ -8,5 +9,4 @@ class AppController {
   }
 }
 
-export default AppController;
 module.exports = AppController;
