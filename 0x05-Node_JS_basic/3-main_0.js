@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const countStudents = require('./3-read_file_async');
+const countStudents = require('./3-read_file_async-o');
 
 countStudents("nope.csv")
   .then(() => {
