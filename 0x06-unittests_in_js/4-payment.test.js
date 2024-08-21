@@ -1,25 +1,40 @@
 #!/usr/bin/node
+/* eslint-disable no-unused-expressions */
 const { expect } = require('chai');
-const { it, describe } = require('mocha');
+const {
+  it, describe,
+} = require('mocha');
 const sinon = require('sinon');
 
 const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./3-payment');
 
-describe('', () => {
-  it('checking if numbers with spies', () => {
-    const checkSoy = sinon.spy(Utils, 'calculateNumber');
+describe('sendPaymentRequestToApi with stubs and spies', () => {
+  let calculateNumberStud;
+  let checkSoy;
+  it('checking if numbers with spies and studs', () => {
+    checkSoy = sinon.spy(console, 'log');
+    calculateNumberStud = sinon.stub(Utils, 'calculateNumber').returns(10);
     sendPaymentRequestToApi(1, 3);
     expect(checkSoy.calledOnce).to.be.true;
-    expect(checkSoy.calledWith('SUM', 1, 3)).to.be.true;
+    expect(checkSoy.calledWith('The total is: 10')).to.be.true;
+
+    expect(calculateNumberStud.calledOnce).to.be.true;
+    expect(calculateNumberStud.calledWith('SUM', 1, 3)).to.be.true;
     checkSoy.restore();
+    calculateNumberStud.restore();
   });
 
-  it('checking if numbers round with spies', () => {
-    const checkSoy = sinon.spy(Utils, 'calculateNumber');
-    sendPaymentRequestToApi(1, 3.7);
+  it('checking if numbers round with spies and stubs', () => {
+    checkSoy = sinon.spy(console, 'log');
+    calculateNumberStud = sinon.stub(Utils, 'calculateNumber').returns(10);
+    sendPaymentRequestToApi(1.7, 300.9);
     expect(checkSoy.calledOnce).to.be.true;
-    expect(checkSoy.calledWith('SUM', 1, 3.7)).to.be.true;
+    expect(checkSoy.calledWith('The total is: 10')).to.be.true;
+
+    expect(calculateNumberStud.calledOnce).to.be.true;
+    expect(calculateNumberStud.calledWith('SUM', 1.7, 300.9)).to.be.true;
     checkSoy.restore();
+    calculateNumberStud.restore();
   });
 });

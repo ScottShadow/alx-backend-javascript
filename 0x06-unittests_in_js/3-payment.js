@@ -1,4 +1,5 @@
 #!/usr/bin/node
+/* eslint-disable no-console */
 const Utils = require('./utils');
 
 function sendPaymentRequestToApi(totalAmount, totalShipping) {

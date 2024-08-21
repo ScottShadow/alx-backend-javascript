@@ -1,4 +1,5 @@
 #!/usr/bin/node
+/* eslint-disable no-unused-expressions */
 const { expect } = require('chai');
 const { it, describe } = require('mocha');
 const sinon = require('sinon');
@@ -6,7 +7,7 @@ const sinon = require('sinon');
 const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./3-payment');
 
-describe('', () => {
+describe('calculateNumber with spies', () => {
   it('checking if numbers with spies', () => {
     const checkSoy = sinon.spy(Utils, 'calculateNumber');
     sendPaymentRequestToApi(1, 3);
