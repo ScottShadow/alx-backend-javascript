@@ -15,12 +15,12 @@ describe('sendPaymentRequestToApi with stubs and spies', () => {
   it('checking if numbers with spies and studs', () => {
     checkSoy = sinon.spy(console, 'log');
     calculateNumberStud = sinon.stub(Utils, 'calculateNumber').returns(10);
-    sendPaymentRequestToApi(1, 3);
+    sendPaymentRequestToApi(100, 20);
     expect(checkSoy.calledOnce).to.be.true;
     expect(checkSoy.calledWith('The total is: 10')).to.be.true;
 
     expect(calculateNumberStud.calledOnce).to.be.true;
-    expect(calculateNumberStud.calledWith('SUM', 1, 3)).to.be.true;
+    expect(calculateNumberStud.calledWith('SUM', 100, 20)).to.be.true;
     checkSoy.restore();
     calculateNumberStud.restore();
   });
