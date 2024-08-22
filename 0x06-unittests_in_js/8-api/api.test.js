@@ -1,26 +1,13 @@
-#!/usr/bin/node
-const {
-  describe, it,
-  after,
-} = require('mocha');
-const { expect } = require('chai');
 const request = require('request');
-const app = require('./api');
+const { expect } = require('chai');
 
-const PORT = 7865;
-const server = app.listen(PORT);
+describe('API integration test', () => {
+  const API_URL = 'http://localhost:7865';
 
-describe('getPaymentTokenFromAPI', () => {
-  after(() => {
-    server.close();
-  });
-  it('GET /', (done) => {
-    // eslint-disable-next-line consistent-return
-    request.get(`http://localhost:${PORT}/`, (err, res, body) => {
-      if (err) return done(err);
-
-      expect(res.statusCode).to.equal(200);
-      expect(body).to.equal('Welcome to the payment system');
+  it('GET / returns correct response', (done) => {
+    request.get(`${API_URL}/`, (_err, res, body) => {
+      expect(res.statusCode).to.be.equal(200);
+      expect(body).to.be.equal('Welcome to the payment system');
       done();
     });
   });
