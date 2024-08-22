@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.get('/cart/:id', (req, res) => {
   const cartId = Number(req.params.id);
-  if (Number.isNaN(cartId)) {
+  if (Number.isNaN(cartId) || cartId < 1) {
     res.status(404).send('Not Found');
   } else {
     res.status(200).send(`Payment methods for cart ${req.params.id}`);
