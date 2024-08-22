@@ -1,5 +1,4 @@
 #!/usr/bin/node
-/* eslint-disable no-console */
 const express = require('express');
 
 const app = express();
@@ -10,6 +9,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log('API available on localhost port 7865');
+  process.stdout.write(`API available on localhost port ${PORT}\n`);
 });
 module.exports = app;
